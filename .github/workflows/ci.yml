@@ -1,0 +1,57 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ '*' ]
+
+jobs:
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v5
+      name: Check out repository
+    - name: Set up mise
+      uses: jdx/mise-action@v3
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        cache_key_prefix: mise-v0-stable
+    - run: mise run lint
+
+  test:
+    name: Test (Go ${{ matrix.mise-env }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        mise-env: ["stable", "oldstable"]
+
+    env:
+      MISE_ENV: ${{ matrix.mise-env }}
+
+    steps:
+    - uses: actions/checkout@v5
+    - name: Set up mise
+      uses: jdx/mise-action@v3
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        cache_key_prefix: mise-v0-${{ matrix.mise-env }}
+
+    - name: Test
+      run: mise run test
+
+    # When repository is public, take the following steps
+    #
+    #   1. Add a CODECOV_TOKEN secret to the repository
+    #   2. Change "test" above to "cover"
+    #   3. Uncomment the codecov badge in intro.md.
+    #   4. Uncomment the following step and delete this comment.
+    #
+    # - name: Upload coverage
+    #   uses: codecov/codecov-action@v5
+    #   with:
+    #     token: ${{ secrets.CODECOV_TOKEN }}

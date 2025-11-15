@@ -1,0 +1,55 @@
+[settings]
+experimental = true
+
+[tools]
+go = "latest"
+"aqua:golangci/golangci-lint" = "latest"
+"ubi:miniscruff/changie" = "latest"
+"ubi:abhinav/doc2go" = "latest"
+"ubi:abhinav/requiredfield" = "latest"
+"ubi:abhinav/stitchmd" = "latest"
+
+[tasks.build]
+run = "go build ./..."
+description = "Build the project"
+
+[tasks.lint]
+description = "Run all linters"
+depends = ["lint:*"]
+
+[tasks.test]
+description = "Run tests"
+run = "go test -race ./..."
+
+[tasks.cover]
+description = "Run tests with coverage"
+run = [
+    "go test -race -coverprofile=cover.out -coverpkg=./... ./...",
+    "go tool cover -html=cover.out -o cover.html"
+]
+
+[tasks.stitchmd]
+description = "Generate README from doc/README.md"
+run = "stitchmd -o README.md doc/README.md"
+
+[tasks."lint:tidy"]
+description = "Ensure go.mod is tidy"
+run = "go mod tidy -diff"
+
+[tasks."lint:golangci"]
+description = "Run golangci-lint"
+run = "golangci-lint run"
+
+[tasks."lint:requiredfield"]
+run = "go vet -vettool=$(command -v requiredfield) ./..."
+description = "Check for required fields"
+
+[tasks."lint:stitchmd"]
+description = "Check that README is up-to-date"
+run = """
+DIFF=$(stitchmd -diff -o README.md doc/README.md)
+if [[ -n "$DIFF" ]]; then
+  echo "$DIFF"
+  exit 1
+fi
+"""
