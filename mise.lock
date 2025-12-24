@@ -1,23 +1,53 @@
 [[tools."aqua:golangci/golangci-lint"]]
-version = "2.6.2"
+version = "2.7.2"
 backend = "aqua:golangci/golangci-lint"
+"platforms.linux-arm64" = { checksum = "sha256:7028e810837722683dab679fb121336cfa303fecff39dfe248e3e36bc18d941b", url = "https://github.com/golangci/golangci-lint/releases/download/v2.7.2/golangci-lint-2.7.2-linux-arm64.tar.gz"}
+"platforms.linux-x64" = { checksum = "sha256:ce46a1f1d890e7b667259f70bb236297f5cf8791a9b6b98b41b283d93b5b6e88", url = "https://github.com/golangci/golangci-lint/releases/download/v2.7.2/golangci-lint-2.7.2-linux-amd64.tar.gz"}
+"platforms.macos-arm64" = { checksum = "sha256:6ce86a00e22b3709f7b994838659c322fdc9eae09e263db50439ad4f6ec5785c", url = "https://github.com/golangci/golangci-lint/releases/download/v2.7.2/golangci-lint-2.7.2-darwin-arm64.tar.gz"}
+"platforms.macos-x64" = { checksum = "sha256:6966554840a02229a14c52641bc38c2c7a14d396f4c59ba0c7c8bb0675ca25c9", url = "https://github.com/golangci/golangci-lint/releases/download/v2.7.2/golangci-lint-2.7.2-darwin-amd64.tar.gz"}
+"platforms.windows-x64" = { checksum = "sha256:d48f456944c5850ca408feb0cac186345f0a6d8cf5dc31875c8f63d3dff5ee4c", url = "https://github.com/golangci/golangci-lint/releases/download/v2.7.2/golangci-lint-2.7.2-windows-amd64.zip"}
+
+[[tools."github:abhinav/doc2go"]]
+version = "0.12.0"
+backend = "github:abhinav/doc2go"
+"platforms.linux-arm64" = { checksum = "sha256:79fad2a69bd9168f05502a03b9b9acb90b417b5d5c19f59fe932567c579ffcbc", url = "https://github.com/abhinav/doc2go/releases/download/v0.12.0/doc2go-linux-arm64.tar.gz", url_api = "https://api.github.com/repos/abhinav/doc2go/releases/assets/326119329"}
+"platforms.linux-x64" = { checksum = "sha256:a8e79cc0b93b62b076252cbf0525da1be13a45ab2864e6375c1a6f29f684499b", url = "https://github.com/abhinav/doc2go/releases/download/v0.12.0/doc2go-linux-amd64.tar.gz", url_api = "https://api.github.com/repos/abhinav/doc2go/releases/assets/326119196"}
+"platforms.macos-arm64" = { checksum = "sha256:7cb414e47a1cf03d6d2f6d014347fe48ddc46ea04d598eb95a1f841b1862fcc8", url = "https://github.com/abhinav/doc2go/releases/download/v0.12.0/doc2go-darwin-arm64.tar.gz", url_api = "https://api.github.com/repos/abhinav/doc2go/releases/assets/326119197"}
+"platforms.macos-x64" = { checksum = "sha256:44a742295ef296f33ef43cdb6612cee41f1a6330285ee1e12aba55427ffd4121", url = "https://github.com/abhinav/doc2go/releases/download/v0.12.0/doc2go-darwin-amd64.tar.gz", url_api = "https://api.github.com/repos/abhinav/doc2go/releases/assets/326119332"}
+"platforms.windows-x64" = { checksum = "sha256:74f0de539856027ffa955bd31656b7c44f183144b39652689c2e8dfb642c9a62", url = "https://github.com/abhinav/doc2go/releases/download/v0.12.0/doc2go-windows-amd64.tar.gz", url_api = "https://api.github.com/repos/abhinav/doc2go/releases/assets/326119334"}
+
+[[tools."github:abhinav/requiredfield"]]
+version = "0.8.0"
+backend = "github:abhinav/requiredfield"
+"platforms.linux-arm64" = { checksum = "sha256:b677eef8e775aca2c3489ee72858afcca860c86b84f98bb93ceac77a327068c1", url = "https://github.com/abhinav/requiredfield/releases/download/v0.8.0/requiredfield.Linux-aarch64.tar.gz", url_api = "https://api.github.com/repos/abhinav/requiredfield/releases/assets/322673583"}
+"platforms.linux-x64" = { checksum = "sha256:0ff092e02803df2a291bb1d8e88e4540defb56f1d96e2b61f898d77bd8d35b8b", url = "https://github.com/abhinav/requiredfield/releases/download/v0.8.0/requiredfield.Linux-x86_64.tar.gz", url_api = "https://api.github.com/repos/abhinav/requiredfield/releases/assets/322673580"}
+"platforms.macos-arm64" = { checksum = "sha256:5d9ac71ca4c0ba8cc754f3b8b283bc0207f90089cdc435edb059ffb64c1d057e", url = "https://github.com/abhinav/requiredfield/releases/download/v0.8.0/requiredfield.Darwin-arm64.tar.gz", url_api = "https://api.github.com/repos/abhinav/requiredfield/releases/assets/322673584"}
+"platforms.macos-x64" = { checksum = "sha256:8e63af0f59528e53f9a324d191bcacddca4b3c69c4df1b6f767d02ef2c2ae191", url = "https://github.com/abhinav/requiredfield/releases/download/v0.8.0/requiredfield.Darwin-x86_64.tar.gz", url_api = "https://api.github.com/repos/abhinav/requiredfield/releases/assets/322673581"}
+"platforms.windows-x64" = { checksum = "sha256:79e2caacfbb103b72fd9aa286e895eac18d856eaaf7a5f53b173feb244061295", url = "https://github.com/abhinav/requiredfield/releases/download/v0.8.0/requiredfield.Windows-x86_64.zip", url_api = "https://api.github.com/repos/abhinav/requiredfield/releases/assets/322673586"}
+
+[[tools."github:abhinav/stitchmd"]]
+version = "0.9.0"
+backend = "github:abhinav/stitchmd"
+"platforms.linux-arm64" = { checksum = "sha256:c27b7d5fb67fa6e0f4d5468320a1e73620de68fc2047845a94d973b628564924", url = "https://github.com/abhinav/stitchmd/releases/download/v0.9.0/stitchmd-linux-arm64.tar.gz", url_api = "https://api.github.com/repos/abhinav/stitchmd/releases/assets/174170745"}
+"platforms.linux-x64" = { checksum = "sha256:0fca7cca22f22b2c29d2b2399d6dca7fc8e634ae95ee89226bb99dd7d916bd0d", url = "https://github.com/abhinav/stitchmd/releases/download/v0.9.0/stitchmd-linux-amd64.tar.gz", url_api = "https://api.github.com/repos/abhinav/stitchmd/releases/assets/174170738"}
+"platforms.macos-arm64" = { checksum = "sha256:d12bddffd22c4636136240d7352c98ce4f26e26c368445f8bd2cba33aa38daaa", url = "https://github.com/abhinav/stitchmd/releases/download/v0.9.0/stitchmd-darwin-arm64.tar.gz", url_api = "https://api.github.com/repos/abhinav/stitchmd/releases/assets/174170737"}
+"platforms.macos-x64" = { checksum = "sha256:e4a4053fe1c8addec90fc7dc3580d76130940946ae7f3377c9a08503e07b9fae", url = "https://github.com/abhinav/stitchmd/releases/download/v0.9.0/stitchmd-darwin-amd64.tar.gz", url_api = "https://api.github.com/repos/abhinav/stitchmd/releases/assets/174170736"}
+"platforms.windows-x64" = { checksum = "sha256:608fa90ebf8df2366b621d38151c0951521bd6a93389e6b56631be521020a928", url = "https://github.com/abhinav/stitchmd/releases/download/v0.9.0/stitchmd-windows-amd64.tar.gz", url_api = "https://api.github.com/repos/abhinav/stitchmd/releases/assets/174170746"}
+
+[[tools."github:miniscruff/changie"]]
+version = "1.24.0"
+backend = "github:miniscruff/changie"
+"platforms.linux-arm64" = { checksum = "sha256:0eaf34f01c24f7825614897427e42553070fb4407070a33759f82b117a6c3afc", url = "https://github.com/miniscruff/changie/releases/download/v1.24.0/changie_1.24.0_linux_arm64.tar.gz", url_api = "https://api.github.com/repos/miniscruff/changie/releases/assets/319542127"}
+"platforms.linux-x64" = { checksum = "sha256:706937c1874eb7c270d15f644d8a84a74dfa7f27778cbc8ca9cb045a0d68d9df", url = "https://github.com/miniscruff/changie/releases/download/v1.24.0/changie_1.24.0_linux_amd64.tar.gz", url_api = "https://api.github.com/repos/miniscruff/changie/releases/assets/319542133"}
+"platforms.macos-arm64" = { checksum = "sha256:cdbca27a073fc741c5ff08e9792444f459dbc5cff151ecb7118f2fdab9ea346f", url = "https://github.com/miniscruff/changie/releases/download/v1.24.0/changie_1.24.0_darwin_arm64.tar.gz", url_api = "https://api.github.com/repos/miniscruff/changie/releases/assets/319542132"}
+"platforms.macos-x64" = { checksum = "sha256:4ffd88cb50b2ad382b609318a41be81e7d29a750be7607fab7024e76cccb67fa", url = "https://github.com/miniscruff/changie/releases/download/v1.24.0/changie_1.24.0_darwin_amd64.tar.gz", url_api = "https://api.github.com/repos/miniscruff/changie/releases/assets/319542130"}
+"platforms.windows-x64" = { checksum = "sha256:4a90748c1da0179afe282599b562e75ef2cb5ce34e25d5f67e70ef20725b9e1d", url = "https://github.com/miniscruff/changie/releases/download/v1.24.0/changie_1.24.0_windows_amd64.zip", url_api = "https://api.github.com/repos/miniscruff/changie/releases/assets/319542125"}
 
 [[tools.go]]
-version = "1.25.4"
+version = "1.25.5"
 backend = "core:go"
-
-[[tools."ubi:abhinav/doc2go"]]
-version = "0.9.1"
-backend = "ubi:abhinav/doc2go"
-
-[[tools."ubi:abhinav/requiredfield"]]
-version = "0.7.1"
-backend = "ubi:abhinav/requiredfield"
-
-[[tools."ubi:abhinav/stitchmd"]]
-version = "0.9.0"
-backend = "ubi:abhinav/stitchmd"
-
-[[tools."ubi:miniscruff/changie"]]
-version = "1.22.1"
-backend = "ubi:miniscruff/changie"
+"platforms.linux-arm64" = { checksum = "sha256:b00b694903d126c588c378e72d3545549935d3982635ba3f7a964c9fa23fe3b9", url = "https://dl.google.com/go/go1.25.5.linux-arm64.tar.gz"}
+"platforms.linux-x64" = { checksum = "sha256:9e9b755d63b36acf30c12a9a3fc379243714c1c6d3dd72861da637f336ebb35b", url = "https://dl.google.com/go/go1.25.5.linux-amd64.tar.gz"}
+"platforms.macos-arm64" = { checksum = "sha256:bed8ebe824e3d3b27e8471d1307f803fc6ab8e1d0eb7a4ae196979bd9b801dd3", url = "https://dl.google.com/go/go1.25.5.darwin-arm64.tar.gz"}
+"platforms.macos-x64" = { checksum = "sha256:b69d51bce599e5381a94ce15263ae644ec84667a5ce23d58dc2e63e2c12a9f56", url = "https://dl.google.com/go/go1.25.5.darwin-amd64.tar.gz"}
+"platforms.windows-x64" = { checksum = "sha256:ae756cce1cb80c819b4fe01b0353807178f532211b47f72d7fa77949de054ebb", url = "https://dl.google.com/go/go1.25.5.windows-amd64.zip"}
